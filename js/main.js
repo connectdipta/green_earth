@@ -162,7 +162,6 @@ function calculateTotal(){
   for (let item of transactions) {
   total += item.price;
      }
-  console.log(total);
   return total;
 };
 
