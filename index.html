@@ -94,130 +94,35 @@
                 <p class="text-white bg-[#15803d]  pl-2">All Trees</p>
                 
                 <!-- SCRIPT PART -->
-                <div>
-                    <p class="text-[#1f2937] m-2 px-2 py-1 rounded cursor-pointer hover:bg-green-200 active:bg-gray-200 transition">Fruit Trees</p>
+                <div id="categoryContainer">
+                    <!-- Categories -->
                 </div>
 
             </div>
 
             <!-- Tree Cards -->
-            <div class=" grid grid-cols-3 max-sm:grid-cols-1 gap-6">
-
-                <!-- Card-1 -->
-                <div class="p-3 w-84 bg-white rounded-lg shadow-lg">
-                    <img src="./assets/hero-leaf1.png" alt="" class="w-74 rounded-lg shadow-sm">
-                    <p class="text-sm font-semibold my-3">Mango Tree</p>
-                    <p class="text-[#1f2937] text-xs mb-3">A fast-growing tropical tree that produces delicious, juicy mangoes during summer. Its dense green</p>
-
-                    <div class="flex justify-between">
-                        <a class="btn text-[#15803D] bg-[#DCFCE7] rounded-full border-none shadow-none h-7">Fruit Tree</a>
-                        <p>৳<span>500</span></p>
-                    </div>
-                    <a class="btn text-white bg-[#15803d] rounded-full border-none shadow-none mt-3 w-full">Add to Cart</a>
-
+            <div class=" grid grid-cols-3 max-sm:grid-cols-1  gap-6" id="cards">
+                
+                <!-- LOADING -->
+                <div id="loading" class="hidden justify-center items-center my-6">
+                    <span class="loading loading-spinner loading-xl text-green-600"></span>
                 </div>
-
-                <!-- Card-2 -->
-                <div class="p-3 w-84 bg-white rounded-lg shadow-lg">
-                    <img src="./assets/hero-leaf1.png" alt="" class="w-74 rounded-lg shadow-sm">
-                    <p class="text-sm font-semibold my-3">Mango Tree</p>
-                    <p class="text-[#1f2937] text-xs mb-3">A fast-growing tropical tree that produces delicious, juicy mangoes during summer. Its dense green</p>
-
-                    <div class="flex justify-between">
-                        <a class="btn text-[#15803D] bg-[#DCFCE7] rounded-full border-none shadow-none h-7">Fruit Tree</a>
-                        <p>৳<span>500</span></p>
-                    </div>
-                    <a class="btn text-white bg-[#15803d] rounded-full border-none shadow-none mt-3 w-full">Add to Cart</a>
-
-                </div>
-
-                <!-- Card-3 -->
-                <div class="p-3 w-84 bg-white rounded-lg shadow-lg">
-                    <img src="./assets/hero-leaf1.png" alt="" class="w-74 rounded-lg shadow-sm">
-                    <p class="text-sm font-semibold my-3">Mango Tree</p>
-                    <p class="text-[#1f2937] text-xs mb-3">A fast-growing tropical tree that produces delicious, juicy mangoes during summer. Its dense green</p>
-
-                    <div class="flex justify-between">
-                        <a class="btn text-[#15803D] bg-[#DCFCE7] rounded-full border-none shadow-none h-7">Fruit Tree</a>
-                        <p>৳<span>500</span></p>
-                    </div>
-                    <a class="btn text-white bg-[#15803d] rounded-full border-none shadow-none mt-3 w-full">Add to Cart</a>
-
-                </div>
-
-                <!-- Card-4 -->
-                <div class="p-3 w-84 bg-white rounded-lg shadow-lg">
-                    <img src="./assets/hero-leaf1.png" alt="" class="w-74 rounded-lg shadow-sm">
-                    <p class="text-sm font-semibold my-3">Mango Tree</p>
-                    <p class="text-[#1f2937] text-xs mb-3">A fast-growing tropical tree that produces delicious, juicy mangoes during summer. Its dense green</p>
-
-                    <div class="flex justify-between">
-                        <a class="btn text-[#15803D] bg-[#DCFCE7] rounded-full border-none shadow-none h-7">Fruit Tree</a>
-                        <p>৳<span>500</span></p>
-                    </div>
-                    <a class="btn text-white bg-[#15803d] rounded-full border-none shadow-none mt-3 w-full">Add to Cart</a>
-
-                </div>
-
-                <!-- Card-5 -->
-                <div class="p-3 w-84 bg-white rounded-lg shadow-lg">
-                    <img src="./assets/hero-leaf1.png" alt="" class="w-74 rounded-lg shadow-sm">
-                    <p class="text-sm font-semibold my-3">Mango Tree</p>
-                    <p class="text-[#1f2937] text-xs mb-3">A fast-growing tropical tree that produces delicious, juicy mangoes during summer. Its dense green</p>
-
-                    <div class="flex justify-between">
-                        <a class="btn text-[#15803D] bg-[#DCFCE7] rounded-full border-none shadow-none h-7">Fruit Tree</a>
-                        <p>৳<span>500</span></p>
-                    </div>
-                    <a class="btn text-white bg-[#15803d] rounded-full border-none shadow-none mt-3 w-full">Add to Cart</a>
-
-                </div>
-
-                <!-- Card-6 -->
-                <div class="p-3 w-84 bg-white rounded-lg shadow-lg">
-                    <img src="./assets/hero-leaf1.png" alt="" class="w-74 rounded-lg shadow-sm">
-                    <p class="text-sm font-semibold my-3">Mango Tree</p>
-                    <p class="text-[#1f2937] text-xs mb-3">A fast-growing tropical tree that produces delicious, juicy mangoes during summer. Its dense green</p>
-
-                    <div class="flex justify-between">
-                        <a class="btn text-[#15803D] bg-[#DCFCE7] rounded-full border-none shadow-none h-7">Fruit Tree</a>
-                        <p>৳<span>500</span></p>
-                    </div>
-                    <a class="btn text-white bg-[#15803d] rounded-full border-none shadow-none mt-3 w-full">Add to Cart</a>
-
-                </div>
-
-
-
+                <!-- All Cards -->
             </div>
 
             <!-- Cart -->
             <div class=" bg-white p-4 rounded-2xl w-70 max-sm:w-84 shadow">
                 <p class="text-xl font-semibold">Your Cart</p>
-                <div>
-                    <!-- Price Cart-1 -->
-                    <div class="flex justify-between items-center bg-[#F0FDF4] rounded shadow p-3 my-2">
-                        <div>
-                          <p class="text-[#1f2937] text-xs font-semibold mb-1">Mango Tree</p>
-                          <p class="text-[#8C8C8C] text-sm font-normal">৳ <span>500</span> x 1</p>
-                        </div>
-                        <button class="p-2 rounded hover:bg-gray-200 active:bg-gray-300 transition">
-                          <i class="fa-solid fa-xmark text-[#8C8C8C] text-xs font-normal"></i>
-                        </button>
-                    </div>
+                <div id="transactionsCards">
+                    <!-- all cart -->
                 </div>
                 <!-- Total -->
-                <div class="flex justify-between border-t-2 border-gray-300 border-opacity-10">
+                <div class="flex justify-between border-t-2 border-gray-300 border-opacity-10 mt-2">
                     <p class="font-medium">Total:</p>
-                    <p class="font-medium">৳ <span>1000</span></p>
+                    <p class="font-medium">৳ <span id="total">0</span></p>
                 </div>
-
-
             </div>
-
         </div>
-
-
     </section>
 
     <!-- ABOUT THE CAMPAIGN -->
@@ -263,7 +168,6 @@
         </div>
     </section>
 
-
     <!-- FORM Section -->
     <section class="bg-[#166534] flex flex-col items-center py-24">
         <h3 class="text-white text-3xl font-semibold mb-10">Plant a Tree Today</h3>
@@ -303,6 +207,22 @@
         </aside>
     </footer>
 
-    <script src="./main.js"></script>
+    <!-- MODAL -->
+    <dialog id="my_modal_5" class="modal modal-bottom sm:modal-middle">
+       <div class="modal-box px-20">
+           <div id="modal_details">
+             <!-- details -->
+           </div>
+           <div class="modal-action">
+          <form method="dialog">
+          <!-- if there is a button in form, it will close the modal -->
+             <button class="btn">Close</button>
+          </form>
+        </div>
+      </div>
+    </dialog>
+
+    <!-- Link Script -->
+    <script src="./js/main.js"></script>
 </body>
 </html>
