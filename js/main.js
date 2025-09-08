@@ -15,7 +15,7 @@ fetch("https://openapi.programming-hero.com/api/categories")
         btnDiv.innerHTML = `
            <p onclick="loadTreeCard(${element.id})"
               id = "ID-${element.id}"
-              class="text-[#1f2937] m-2 px-3 py-2 rounded cursor-pointer hover:bg-green-400 active:bg-gray-200 transition duration-200 shadow-sm hover:shadow-lg categoryBtn transform hover:-translate-y-1">
+              class="text-[#1f2937] m-2 px-3 py-2 rounded cursor-pointer hover:bg-green-600 active:bg-gray-200 transition duration-200 shadow-sm hover:shadow-lg categoryBtn transform hover:-translate-y-1">
         ${element.category_name}
       </p>
         `;
@@ -27,7 +27,7 @@ fetch("https://openapi.programming-hero.com/api/categories")
  allCards();
 
 // Adding highlight to categories button and show category wise plant
-async function loadTreeCard(id) {
+function loadTreeCard(id) {
      
     // Highlight Category
     const allCategoryBtn = document.getElementsByClassName("categoryBtn");
@@ -41,7 +41,7 @@ async function loadTreeCard(id) {
   // Show Category wise Card
 
     const url = `https://openapi.programming-hero.com/api/category/${id}`;
-    await fetch(url)
+     fetch(url)
     .then(resp => resp.json())
     .then(particular => {
     let oneCategory = particular.plants;
@@ -55,10 +55,10 @@ async function loadTreeCard(id) {
         specificDiv.innerHTML = `
             <div class="p-3 w-84 bg-white rounded-lg shadow-lg"
                   id="Tree-${trees.id}">
-                    <img src="${trees.image}" alt="" class="w-74 h-48 rounded-lg shadow-sm">
+                    <img src="${trees.image}" alt="" class="w-full h-50 rounded-lg shadow-sm object-cover">
                     <p onclick="displayModal(${trees.id})"
                        class="text-sm font-semibold my-3 cursor-pointer transition duration-200 ease-in-out hover:text-blue-500 active:scale-95">${trees.name}</p>
-                    <p class="text-[#1f2937] text-xs mb-3">${trees.description}</p>
+                    <p class="text-[#1f2937] text-xs mb-3 line-clamp-2">${trees.description}</p>
 
                     <div class="flex justify-between">
                         <a class="btn text-[#15803D] bg-[#DCFCE7] rounded-full border-none shadow-none h-7">${trees.category}</a>
@@ -85,8 +85,10 @@ function showLoading() {
 
 function hideLoading() {
   const loading = document.getElementById("loading");
-  loading.classList.add("hidden");
-  loading.classList.remove("flex");
+  if (loading) {
+    loading.classList.add("hidden");
+    loading.classList.remove("flex");
+  }
 }
 
 async function allCards() {
@@ -104,10 +106,10 @@ async function allCards() {
       const treeDiv = document.createElement("div");
       treeDiv.innerHTML = `
         <div class="p-3 w-84 bg-white rounded-lg shadow-lg" id="Tree-${trees.id}">
-          <img src="${trees.image}" alt="" class="w-74 h-48 rounded-lg shadow-sm">
+          <img src="${trees.image}" alt="" class="w-full h-50 rounded-lg shadow-sm object-cover">
           <p onclick="displayModal(${trees.id})"
             class="text-sm font-semibold my-3 cursor-pointer transition duration-200 ease-in-out hover:text-blue-500 active:scale-95">${trees.name}</p>
-          <p class="text-[#1f2937] text-xs mb-3">${trees.description}</p>
+          <p class="text-[#1f2937] text-xs mb-3 line-clamp-2">${trees.description}</p>
 
           <div class="flex justify-between">
             <a class="btn text-[#15803D] bg-[#DCFCE7] rounded-full border-none shadow-none h-7">${trees.category}</a>
@@ -137,7 +139,7 @@ function displayModal(ID) {
       const modalDetails = document.getElementById("modal_details");
       modalDetails.innerHTML = `
         <p class="text-xl font-semibold mb-2">${oneModal.name}</p>
-        <img class="h-65 w-100 rounded-xl" src="${oneModal.image}" alt="">
+        <img class="h-65 w-full rounded-xl object-cover" src="${oneModal.image}" alt="">
         <p class="font-bold mt-2">Category:<span class="font-normal text-sm ml-2">${oneModal.category}</span></p>
         <p class="font-bold">Price:<span class="font-normal text-sm ml-2">৳${oneModal.price}</span></p>
         <p class="font-bold">Description:<span class="font-normal text-sm ml-2">${oneModal.description}</span></p>
@@ -148,8 +150,6 @@ function displayModal(ID) {
       
     });
 };
- 
-
 
                            //  CART
 
@@ -210,3 +210,9 @@ function removeItem(index) {
   transactions.splice(index, 1);
   setTransactions();
 }
+
+// Extra
+function congratulate(){
+  alert(`🌱 Thank you for your generous donation! 
+    You've just planted hope for a greener tomorrow. 💚`);
+};

@@ -23,6 +23,9 @@
         .inter{
         font-family: "Inter";
         }
+    html {
+        scroll-behavior: smooth;
+        }
     </style>
 
 </head>
@@ -32,28 +35,28 @@
     <div class="navbar bg-base-100 shadow-sm bg-[#15803d] text-[#ffffff] px-18 max-sm:px-4">
         <div class="navbar-start">
            <div class="dropdown">
-              <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
-                 <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16" /> </svg>
+              <div tabindex="0" role="button" class="btn btn-ghost lg:hidden hover:bg-green-600 border-none shadow-none">
+                 <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
               </div>
               <ul
                 tabindex="0"
-                class=" menu menu-sm dropdown-content bg-blue-100 rounded-box z-1 mt-3 w-52 p-2 shadow">
-                <li><a>About</a></li>
-                <li><a>Gallery</a></li>
-                <li><a>Plant a Tree</a></li>
+                class=" menu menu-sm dropdown-content bg-green-600 rounded-box z-1 mt-3 w-52 p-2 shadow">
+                <li><a href="#about">About</a></li>
+                <li><a href="#gallery">Gallery</a></li>
+                <li><a href="#plant">Plant a Tree</a></li>
                </ul>
             </div>
-            <a class="btn btn-ghost text-xl">Green Earth</a>
+            <a class="btn btn-ghost text-xl hover:bg-green-600 hover:text-white border-none shadow-none"><img src="./assets/logo.png" alt="" class="w-10">Green Earth</a>
             </div>
                <div class="navbar-center hidden lg:flex">
                   <ul class="menu menu-horizontal px-1">
-                    <li><a>About</a></li>
-                    <li><a>Gallery</a></li>
-                    <li><a>Plant a Tree</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#gallery">Gallery</a></li>
+                    <li><a href="#plant">Plant a Tree</a></li>
                   </ul>
                </div>
                <div class="navbar-end ">
-                 <a class="btn text-[#15803d] bg-[#facc15] rounded-full border-none shadow-none">Plant a Tree</a>
+                 <a href="#plant" class="btn hover:text-white hover:bg-green-600 text-[#15803d] bg-[#facc15] rounded-full border-none shadow-none">Plant a Tree</a>
                </div>
     </div>
 
@@ -66,8 +69,8 @@
         <!-- Hero Text -->
         <div class="text-center max-sm:mt-7">
             <h2 class="text-[#1f2937] text-5xl font-bold">Plant a Tree, Grow a Future</h2>
-            <p class="text-[#1f2937]">Join our mission to plant 1 million trees and make the Earth greener for future <br>generations.</p>
-            <a class="btn text-[#15803d] bg-[#facc15] rounded-full border-none shadow-none mt-6">Plant a Tree</a>
+            <p class="text-[#1f2937]">Join our mission to plant 1 million trees and make the Earth greener for future <br class="max-lg:hidden">generations.</p>
+            <a href="#plant" class="btn hover:text-white hover:bg-green-600 text-[#15803d] bg-[#facc15] rounded-full border-none shadow-none mt-6">Plant a Tree</a>
         </div>
         
         <!-- Hero Img-2 -->
@@ -82,14 +85,14 @@
     </section>
 
     <!-- CHOOSE YOUR TREES -->
-    <section class=" mx-18 max-sm:mx-4 mt-24 max-sm:mt-12">
+    <section class=" mx-18 max-sm:mx-4 mt-24 max-sm:mt-12" id="gallery">
         <h3 class="text-[#1f2937] text-3xl font-semibold text-center mb-10">Choose Your Trees</h3>
 
         <!-- Shopping -->
         <div class=" flex justify-center gap-7 max-sm:flex-col max-sm:items-center max-sm:gap-3">
             
             <!-- Categories -->
-            <div class=" w-66">
+            <div class=" w-66 max-sm:w-84">
                 <p class="text-xl font-semibold mb-4">Categories</p>
                 <p class="text-white bg-[#15803d]  pl-2">All Trees</p>
                 
@@ -97,7 +100,6 @@
                 <div id="categoryContainer">
                     <!-- Categories -->
                 </div>
-
             </div>
 
             <!-- Tree Cards -->
@@ -126,7 +128,7 @@
     </section>
 
     <!-- ABOUT THE CAMPAIGN -->
-    <section class="mt-24 my-24">
+    <section class="mt-24 my-24" id="about">
         <h3 class="text-[#1f2937] text-3xl font-semibold text-center mb-10">About the Campaign</h3>
 
         <div class="flex justify-center items-center gap-7 max-sm:flex-col max-sm:mx-5">
@@ -169,7 +171,7 @@
     </section>
 
     <!-- FORM Section -->
-    <section class="bg-[#166534] flex flex-col items-center py-24">
+    <section class="bg-[#166534] flex flex-col items-center py-24" id="plant">
         <h3 class="text-white text-3xl font-semibold mb-10">Plant a Tree Today</h3>
         <!-- Form -->
         <fieldset class="fieldset bg-[#15803d] border-base-300 rounded-box w-140 max-sm:w-100 p-4">
@@ -184,20 +186,10 @@
              <option>5 Tree - 50$</option>
             </select>
 
-           <!-- <button class="btn btn-neutral mt-4">Login</button> -->
-           <a class="btn text-[#15803d] bg-[#facc15] rounded-full border-none shadow-none mt-6 w-full">Donate Now</a>
+           <a onclick="congratulate()"
+              class="btn hover:text-white hover:bg-green-600 text-[#15803d] bg-[#facc15] rounded-full border-none shadow-none mt-6 w-full">Donate Now</a>
 
         </fieldset>
-        <div>
-
-
-            <!-- <select class="select">
-             <option disabled selected>Pick a color</option>
-             <option>Crimson</option>
-             <option>Amber</option>
-             <option>Velvet</option>
-            </select> -->
-        </div>
     </section>
 
     <!-- FOOTER -->
@@ -216,7 +208,7 @@
            <div class="modal-action">
           <form method="dialog">
           <!-- if there is a button in form, it will close the modal -->
-             <button class="btn">Close</button>
+             <button class="btn hover:bg-green-600 hover:text-white">Close</button>
           </form>
         </div>
       </div>
